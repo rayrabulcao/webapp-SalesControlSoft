@@ -8,6 +8,7 @@
     <title>Produtos</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="assets/css/index.scss">
     <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
 </head>
 
@@ -28,10 +29,10 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a ui-sref="screen_cadastrar">Cadastrar</a>
+                        <a ui-sref="screen_cadastrar.html">Cadastrar</a>
                     </li>
                     <li>
-                        <a ui-sref="screen_consultar">Consultar</a>
+                        <a ui-sref="screen_consultar.html">Consultar</a>
                     </li>
                     <li>
                         <a ui-sref="#alterar">Alterar</a>
@@ -68,7 +69,7 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- App -->
-    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/controller/app.js"></script>
     <script src="scripts/app/controller/cadastro.js"></script>
 </body>
 

@@ -15,9 +15,9 @@ function config(toastrConfig){
 angular.module("salescontrolapp").config(routerConfig);
 
 function routerConfig ($stateProvider, $urlRouterProvider){
-    $stateProvider.state("listar", {
-        url: "/listar",
-        templateUrl: "views/l",
+    $stateProvider.state("consultar", {
+        url: "/consultar",
+        templateUrl: "views/screen_consultar.html",
         controller: "",
         controllerAs: ""
     });
@@ -27,5 +27,5 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "CadastroController",
         controllerAs: "controller"
     });
-    $urlRouterProvider.otherwise("/listar");
+    $urlRouterProvider.otherwise("/consultar");
 }
