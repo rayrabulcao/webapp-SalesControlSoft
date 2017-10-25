@@ -19,6 +19,7 @@ function CadastroController($scope, toastr){
 
     vm.salvar = function(){
         console.log($scope.produto);
+        // $scope.produto = {};
     }
 
     vm.cancelar = function(){
