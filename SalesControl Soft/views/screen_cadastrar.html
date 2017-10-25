@@ -6,40 +6,32 @@
         </div>
     </div>
     <!-- Inicio do formulario de cadastro do produto -->
-    <form action="" class="container">
+    <form class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
+            
+                <div class="form-group col-md-4">
                     <label for="nome">Nome:</label>
                     <input type="text" class="form-control" name="nome" required="required" ng-model="produto.nome">
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="nome">Marca:</label>
-                            <input type="text" class="form-control" name="marca" required="required" ng-model="produto.marca">
-                        </div>
-                    </div>
+
+                <div class="form-group col-md-4">
+                    <label for="nome">Marca:</label>
+                    <input type="text" class="form-control" name="marca" required="required" ng-model="produto.marca">
                 </div>
+                                
+                <div class="form-group col-md-4">
+                    <label for="nome">Coleção:</label>
+                    <input type="text" class="form-control" name="colecao" required="required" ng-model="produto.colecao">
+               </div>
+        
+               <div class="form-group col-md-4">
+                    <label for="nome">Modelo:</label>
+                    <input type="text" class="form-control" name="modelo" required="required" ng-model="produto.modelo">
+              </div>
+                    
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="nome">Coleção:</label>
-                            <input type="text" class="form-control" name="colecao" required="required" ng-model="produto.colecao">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="nome">Modelo:</label>
-                            <input type="text" class="form-control" name="modelo" required="required" ng-model="produto.modelo">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
+                    
+                        <div class="form-group col-md-4">
                             <label for="nome">Código:</label>
                             <input type="text" class="form-control" name="codigo" required="required" ng-model="produto.codigo">
                         </div>
@@ -47,7 +39,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group">
+                        <div class="form-group col-md-4">
                             <label for="valor">Valor:</label>
                             <input type="text" class="form-control" name="valor" ng-model="produto.valor">
                         </div>
@@ -55,7 +47,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group">
+                        <div class="form-group col-md-4">
                             <label for="quantidade">Quantidade:</label>
                             <input type="text" class="form-control" name="quantidade" ng-model="produto.quantidade">
                         </div>
@@ -63,23 +55,23 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group">
+                        <div class="form-group col-md-4">
                             <label for="quantidade">Cor/Tamanho:</label>
                             <input type="text" class="form-control" name="cor" ng-model="produto.cor">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
+                    
+                        <div class="form-group col-md-4">
                             <label for="descricao">Descrição:</label>
                             <textarea name="descricao" cols="15" rows="5" class="form-control" ng-model="produto.descricao"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
+                    
+                        <div class="form-group col-md-4">
                             <label for="imagem">Imagem:</label>
                             <input type="text" name="imagem" class="form-control" ng-model="produto.imagem">
                             <!-- <button type="submit" class="btn btn primary">Anexar</button>-->
@@ -87,12 +79,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
+                    
+                        <div class="form-group col-md-4">
                             <button type="submit" class="btn btn-primary" ng-click="controller.salvar()">
                                 Cadastrar
                             </button>
-                            <button type="submit" class="btn btn primary" ng-click="controller.cancelar()">
+                            <button ui-sref="index.html" class="btn btn primary" ng-click="controller.cancelar()">
                                 Cancelar
                             </button>
                         </div>
