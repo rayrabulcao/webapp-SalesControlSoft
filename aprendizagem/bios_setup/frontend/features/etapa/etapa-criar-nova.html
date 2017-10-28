@@ -1,0 +1,32 @@
+<md-dialog style="width: 448px; height: 368px">
+    <md-dialog-content layout="column" layout-padding layout-margin>
+
+        <span class="dialogText">Cadastrar nova Etapa</span>
+        <span style="font-size: 18px; font-family: Roboto; color: #363636;">Escolha a Etapa.</span>
+        <br>
+        <br>
+
+        <md-input-container flex="85" style="margin: 0;">
+            <label>Etapa</label>
+
+            <md-select ng-model="nova_etapa" placeholder="Selecione a Etapa" required>
+                <md-option ng-value="etapa" ng-repeat="etapa in add_etapas_configuracao">
+                    {{ etapa.descricao }}
+                </md-option>
+            </md-select>
+
+            <!--<input id="nova_etapa" placeholder="Descreva a Etapa" ng-model="nova_etapa" maxlength=30 autocomplete="off">-->
+
+
+        </md-input-container>
+
+        <div layout="row" layout-align="end center" layout-margin>
+            <md-button ng-click="cancelar()" class="md-accent" style="color: #ca5a5a">
+                CANCELAR
+            </md-button>
+            <md-button ng-click="confirmar()" class="md-accent" style="color: #ca5a5a" ng-disabled="!nova_etapa">
+                CRIAR
+            </md-button>
+        </div>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,4 @@
+app.db
+bios_setup/__pycache__/
+bios_setup/api/__pycache__/
+db.json

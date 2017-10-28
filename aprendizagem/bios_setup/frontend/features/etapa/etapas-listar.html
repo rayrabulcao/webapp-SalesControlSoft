@@ -1,0 +1,65 @@
+<div class="barra_de_acao" layout="row" layout-wrap>
+
+    <div flex="95">
+        <h2 class="h2Title">{{ title }}</h2>
+    </div>
+
+    <div flex="5">
+        <a ui-sref="#">
+            <a ui-sref="home.etapa_cadastrar">
+                <button class="btn-bios">
+                    <ng-md-icon icon="add_circle" style="fill: #73B272;" size="30"></ng-md-icon>
+                </button>
+            </a>
+    </div>
+</div>
+
+<div layout="column" layout-margin class="paddingArea">
+    <div layout="row" layout-wrap>
+        <div flex>
+            <md-input-container>
+                <input type="text" placeholder="Pesquisa" autocomplete="off" ng-model="query_string">
+                <md-icon md-svg-icon="svg/ic-search.svg"></md-icon>
+            </md-input-container>
+        </div>
+    </div>
+{##}
+{#    <md-card class="barra_nenhum_item" layout="column" layout-margin layout-fill layout-padding#}
+{#             layout-align="center center" ng-if="etapas.length < 1">#}
+{#        <p>#}
+{#            Nenhuma etapa cadastrada.#}
+{#        </p>#}
+{#    </md-card>#}
+
+    <md-card flex >
+        <md-list style="padding: 0px">
+            <md-list-item layout="row" class="header_resulttable_setup_bios" layout-align="space-around center">
+                <div flex="35">Etapa</div>
+                <div flex="65">Status</div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item
+                    layout="row"
+                    layout-padding
+                    class="body_resulttable_setup_bios"
+                    ng-repeat-start="etapa in etapas | filter:query_string| limitTo: query.limit: (query.page - 1) * query.limit"
+                    ui-sref="home.etapa_alterar({id: etapa.id})">
+                <div flex="35">pre-flash</div>
+                <div flex="50">ativo</div>
+                <div flex="15" layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" ng-click="confirmarRemocaoDaEtapa(etapa.id)" title="Excluir">
+                        <ng-md-icon icon="delete" style="fill: #CA5A5A;"></ng-md-icon>
+                    </md-button>
+                </div>
+            </md-list-item>
+            <md-divider ng-repeat-end></md-divider>
+        </md-list>
+        <md-table-pagination
+                md-label="{page:'Páginas:', of: 'de'}"
+                md-limit="query.limit"
+                md-page="query.page"
+                md-page-select="true"
+                md-total="{{ query_string?(etapas | filter:query_string).length:etapas.length}}">
+        </md-table-pagination>
+    </md-card>
+</div>

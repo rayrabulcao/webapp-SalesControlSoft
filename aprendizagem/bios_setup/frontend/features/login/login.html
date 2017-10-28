@@ -1,0 +1,60 @@
+<div layout="column" layout-fill class="bg_login">
+
+    <main flex layout="row" layout-align="center center">
+        <md-card class="box_login">
+
+            <img src="../svg/logo.png" class="img_login">
+
+            <form name="myLogin" ng-submit="loginUser(user)">
+
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Usuário</label>
+                    <md-icon>
+                        <ng-md-icon icon="person" style="fill: #838383;"></ng-md-icon>
+                    </md-icon>
+                    <input type="text" name="username" id="username" ng-model="user.username" required  autocomplete="off">
+                    <div ng-messages="myLogin.username.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">Campo obrigatório</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container md-no-float class="md-block">
+                    <label>Senha</label>
+                    <md-icon>
+                        <ng-md-icon icon="lock" style="fill: #838383;"></ng-md-icon>
+                    </md-icon>
+                    <input type="password" name="password" id="password" ng-model="user.password" required autocomplete="off">
+                    <div ng-messages="myLogin.username.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">Campo obrigatório</div>
+                    </div>
+                </md-input-container>
+
+                <div class="message_error">
+                    {{ message }}
+                </div>
+
+                <div class="bottom-sheet-demo inset" layout="row" layout-align="center" style="padding: 0;">
+                    <md-button type="submit" flex="100" class="md-primary md-raised bt_login"
+                               ng-disabled="myLogin.$invalid">ENTRAR</md-button>
+                </div>
+
+            </form>
+
+        </md-card>
+    </main>
+
+    <footer>
+        <md-toolbar class="md-scroll-shrink login_footer" style="background: none;">
+            <div layout="row" layout-align="center center" flex>
+                <div flex="50">
+                    <img src="../svg/positivo.png" style="vertical-align: middle; width: 80px; height: 40px">© Positivo
+                    2017. Todos os direitos reservados.
+                </div>
+                <div flex="50" layout="row" layout-align="end center">
+                    Desenvolvido por <img src="../svg/logo_fpf.png" style="vertical-align: middle;">
+                </div>
+            </div>
+        </md-toolbar>
+    </footer>
+</div>

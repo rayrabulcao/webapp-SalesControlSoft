@@ -1,0 +1,44 @@
+<div class="barra_de_acao" layout="row">
+    <span flex></span>
+    <div flex="85">
+        <a ui-sref="home.configuracoes_listar" class="iconVoltar"> 
+            <md-button class="md-icon-button">
+                <ng-md-icon icon="keyboard_backspace"></ng-md-icon>
+            </md-button>
+        </a>
+        <h2 class="h2Title">                        
+             {{ title }}
+        </h2>        
+    </div>
+    <div flex="15">
+        <a ui-sref="home.etapas_listar" title="Cancelar">
+            <button class="btn-bios">
+                <ng-md-icon icon="cancel" style="fill: #CA5A5A;" size="30"></ng-md-icon>
+            </button>
+        </a>
+        <a>
+            <button class="btn-bios" ng-click="salvarEtapa()" ng-disabled="estaSalvando || !etapa.descricao"  title="Salvar">
+                <ng-md-icon icon="save" class="btn_salvar" size="28"></ng-md-icon>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div layout="column" layout-margin class="paddingArea">
+    <md-card flex>
+        <md-card-content layout="row" layout-fill>
+            <md-input-container flex>
+                <label>Descrição</label>
+                <input ng-model="etapa.descricao" autocomplete="off" maxlength=30 required>
+            </md-input-container>
+            <md-input-container flex>
+                <label>Status</label>
+                <md-select ng-model="etapa.status" placeholder="Status">
+                    <md-option ng-value="true">Ativo</md-option>
+                    <md-option ng-value="false">Inativo</md-option>
+                </md-select>
+            </md-input-container>
+        </md-card-content>
+    </md-card>
+</div>
+

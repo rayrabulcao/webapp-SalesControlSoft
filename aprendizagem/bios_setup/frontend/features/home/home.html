@@ -1,0 +1,43 @@
+<div style="height: 100%;" ng-controller="HomeController as estado" class="main-container" layout="row" flex>
+    <md-content class="main-content" md-scroll-y layout="column" flex>
+        <md-toolbar class="header_bios_setup paddingArea">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button md-button md-ink-ripple hide-gt-sm" ng-click="openLeftMenu()" aria-label="Toggle Menu">
+
+                    <ng-md-icon icon="menu"></ng-md-icon>
+                </md-button>
+
+                <div class="menu_header_bios_setup">
+                    <img class="logo" src="svg/logo.svg">
+                </div>
+                <md-menu-bar class="menuHorizontal">
+
+                    <md-menu ng-class="{active_menu: estado.isStateCurrent(['home.etapas_listar','home.etapa_alterar','home.etapa_cadastrar'])}">
+                        <button ng-click="estado.goTo('home.etapas_listar')">
+                            <div class="inset inset--icon">
+                                <ng-md-icon icon="description" class="bios_icon"></ng-md-icon>
+                            </div>
+                            <div class="inset">
+                                <a>Etapas</a>
+                            </div>
+                        </button>
+                        <md-menu-content></md-menu-content>
+                    </md-menu>
+
+
+                </md-menu-bar>
+
+                <!--<h2>{{ title }}</h2>-->
+                <span flex></span>
+                <span class="username">{{ currentUser }}</span>
+                <!--        <md-button class="md-icon-button">
+                        <ng-md-icon icon="keyboard_arrow_down"></ng-md-icon>
+                    </md-button>!-->
+                <md-button class="md-icon-button" ng-click="logout()">
+                    <ng-md-icon icon="exit_to_app"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <ui-view></ui-view>
+    </md-content>
+</div>
