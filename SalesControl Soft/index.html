@@ -14,63 +14,64 @@
 
 <body>
     <!-- Menu -->
-    <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #99FF99;">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
                     aria-controls="navbar">
-                    <span class="sr-only"></span>
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">SalesControl Soft</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse"">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a ui-ref="screen_cadastrar">Cadastrar</a>
+            <div id="navbar" class="navbar-collapse collapse" ">
+                <ul class="nav navbar-nav navbar-right ">
+                    <li class="active ">
+                        <a ui-sref="cadastrar ">Cadastrar</a>
                     </li>
                     <li>
-                        <a ui-ref="screen_consultar">Consultar</a>
+                        <a ui-sref="consultar ">Consultar</a>
                     </li>
                     <li>
-                        <a ui-sref="#alterar">Alterar</a>
+                        <a ui-sref="editar ">Alterar</a>
                     </li>
                     <li>
-                        <a ui-sref="#excluir">Excluir</a>
+                        <a ui-sref="excluir ">Excluir</a>
                     </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sair
-                            <span class="caret"></span>
+                    <li class="dropdown ">
+                        <a href="# " class="dropdown-toggle " data-toggle="dropdown " role="button " aria-haspopup="true
+                " aria-expanded="false ">Sair
+                            <span class="caret "></span>
                         </a>
                     </li>
-                </ul>
             </div>
         </div>
     </nav>
     <!-- Conteúdo -->
-    <div class="container">
+    <div class="container ">
         <div ui-view></div>        
     </div>
 
+    
     <!-- Footer da página -->
-    <footer class="footer">
-        <p>&copy; SalesControl Soft 2017</p>
+    <div class="container ">
+    <footer class="footer ">
+        <p>Copyright &copy; SalesControl Soft 2017</p>
     </footer>
+</div>
     
     <!-- Vendor -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js "></script>
+    <script src="bower_components/angular/angular.js "></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js "></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.js "></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js "></script>
 
     <!-- App -->
-    <script src="scripts/app/controller/app.js"></script>
-    <script src="scripts/app/controller/cadastro.js"></script>
+    <script src="app.js "></script>
+    <script src="scripts/app/cadastrar/controller-cadastro.js "></script>
 </body>
 
 </html>
