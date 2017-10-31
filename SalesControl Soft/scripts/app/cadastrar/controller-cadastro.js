@@ -1,12 +1,13 @@
 angular.module("salescontrolapp")
     .controller("CadastroController", CadastroController);
 
-function CadastroController($scope, toastr){
-    var vm = this;
+function CadastroController($scope, toastr,$state){
+        
 
-    $scope.item = {};
-    
-    $scope.produto = {
+        $scope.produtos = [];
+
+    var init = function () {
+        $scope.produto = {
         nome: '',
         marca: '',
         colecao: '',
@@ -18,6 +19,9 @@ function CadastroController($scope, toastr){
         descricao: '',
         imagem: ''        
     };
+    }
+
+    
 
    /* vm.enviar = function() {
         if (this.$scope.produto) {
@@ -27,20 +31,31 @@ function CadastroController($scope, toastr){
         }
     }*/
 
-    vm.salvar = function(){
+    $scope.salvar = function(){
         
-        vm.itens.push({nome: vm.item.nome, marca: vm.item.marca, colecao: vm.item.colecao, modelo: vm.item.modelo, codigo: vm.item.codigo,
-            valor: vm.item.valor, quantidade: vm.item.quantidade, tamanho: vm.item.tamanho, descricao: vm.item.descricao, imagem: vm.item.imagem});
-        this.$scope.produto = new Produto();
-        vm.item.nome = vm.item.marca = vm.item.colecao =
-        vm.item.modelo = vm.item.codigo = vm.item.valor =
-        vm.item.quantidade = vm.item.tamanho = vm.item.descricao = 
-        vm.item.imagem = '';
-        this.toastr.success("Item adicionado com sucesso.");
-        console.log($scope.produto);
+        $scope.produtos.push(
+            {
+                'nome': $scope.produto.nome,
+                'marca': $scope.produto.marca,
+                'colecao': $scope.produto.colecao,
+                'modelo': $scope.produto.modelo,
+                'codigo': $scope.produto.codigo,
+                'valor': $scope.produto.valor,
+                'quantidade': $scope.produto.quantidade,
+                'tamanho': $scope.produto.tamanho,
+                'descricao': $scope.produto.descricao,
+                'imagem': $scope.produto.imagem
+            });
+        //this.$scope.produto = new Produto();
+        
+        alert("Item adicionado com sucesso.");
+        // toastr.success("Produto cadastrado com sucesso!");
+        console.log($scope.produtos[0]);
+        //$state.transitionTo('consultar');
         };
     
-    vm.cancelar = function(){
+    $scope.cancelar = function(){
         
     }
+    init();
 }
