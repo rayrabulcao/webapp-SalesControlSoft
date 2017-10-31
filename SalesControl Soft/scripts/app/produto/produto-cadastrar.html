@@ -1,0 +1,63 @@
+<ol class="breadcrumb">
+    <li><a href="index.html">Produtos</a></li>
+    <li class="active">Nome do Produto</li>
+</ol>
+
+<!-- Título -->
+<div class="row">
+    <div class="col-md-12">
+        <h2>
+            <span ng-if="!id">Cadastro de Produtos</span>
+            <span ng-if="id">Atualizar Produto</span>
+        </h2>
+    </div>
+</div>
+
+<!-- Formulário -->
+<div class="row">
+    <div class="col-md-12">
+        <fieldset>
+            <form ng-submit="controller.salvar()">
+                <div class="form-group">
+                    <label for="nome">Nome do Produto</label>
+                    <input type="text" class="form-control" name="nome" ng-model="produto.nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea class="form-control" name="descricao" rows="3" ng-model="produto.descricao" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="url">Imagem (URL)</label>
+                    <input type="text" class="form-control" name="url" ng-model="produto.imagem" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="codigo">Código</label>
+                        <input type="text" class="form-control" name="codigo" ng-model="produto.codigo" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="valor">Valor</label>
+                        <input type="text" class="form-control" name="valor" ng-model="produto.valor" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="text" class="form-control" name="quantidade" ng-model="produto.quantidade" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <a class="btn btn-primary" ui-sref="produtoListar">
+                        <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+                    </a>
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span> 
+                        <span ng-if="!id">Cadastrar</span>
+                        <span ng-if="id">Atualizar</span>
+                    </button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+
+<!-- Fim: Formulário -->

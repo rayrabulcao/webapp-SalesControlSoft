@@ -14,24 +14,50 @@ function config(toastrConfig){
 // Rotas
 angular.module("salescontrolapp").config(routerConfig);
 
-function routerConfig ($stateProvider, $urlRouterProvider){
-    $stateProvider.state("consultar", {
-        url: "/consultar",
-        templateUrl: "scripts/app/consultar/consultar.html",
-        controller: "Consultarcontroller",
-        controllerAs: "controller"
+function routerConfig($stateProvider, $urlRouterProvider) {
+    // Principal
+    $stateProvider
+      .state('principal', {
+        url: '/',
+        templateUrl: 'app/principal/principal.html',
+        controller: 'PrincipalCtrl',
+        controllerAs: 'controller'
+      });
+
+    // Detalhar
+    $stateProvider
+      .state('produtoDetalhar', {
+        url: '/produto-detalhar/:id',
+        templateUrl: 'app/produto/produto-detalhar.html',
+        controller: 'DetalharCtrl',
+        controllerAs: 'controller'
+      });
+    // Listagem
+    $stateProvider
+      .state('produtoListar', {
+        url: '/produto-listar',
+        templateUrl: 'app/produto/produto-listar.html',
+        controller: 'ProdutoListarCtrl',
+        controllerAs: 'controller'
     });
-    $stateProvider.state("cadastrar", {
-        url: "/cadastrar",
-        templateUrl: "scripts/app/cadastrar/cadastrar.html",
-        controller: "CadastroController",
-        controllerAs: "controller"
+    // Cadastrar
+    $stateProvider
+      .state('produtoCadastrar', {
+        url: '/produto-cadastrar',
+        templateUrl: 'app/produto/produto-cadastrar.html',
+        controller: 'ProdutoCadastrarCtrl',
+        controllerAs: 'controller'
     });
-    $stateProvider.state("editar", {
-        url: "/editar",
-        templateUrl: "scripts/app/editar/editar.html",
-        controller: "EditarController",
-        controllerAs: "controller"
+    // Editar
+    $stateProvider
+      .state('produtoEditar', {
+        url: '/produto-editar/:id',
+        templateUrl: 'app/produto/produto-cadastrar.html',
+        controller: 'ProdutoEditarCtrl',
+        controllerAs: 'controller'
     });
-    $urlRouterProvider.otherwise("/");
-}
+
+    $urlRouterProvider.otherwise('/');
+  }
+
+})();
