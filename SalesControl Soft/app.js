@@ -18,7 +18,7 @@ function routerConfig ($stateProvider, $urlRouterProvider){
     $stateProvider.state("consultar", {
         url: "/consultar",
         templateUrl: "scripts/app/consultar/consultar.html",
-        controller: "Consultarcontroller",
+        controller: "ConsultaController",
         controllerAs: "controller"
     });
     $stateProvider.state("cadastrar", {

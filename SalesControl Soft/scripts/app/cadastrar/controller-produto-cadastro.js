@@ -22,20 +22,20 @@ function CadastroController($scope, toastr,$state){
     }
     
 
-    $scope.enviar = function() {
-        if (this.$scope.produto) {
-            this.atualizar();
+    /*$scope.enviar = function() {
+        if ($scope.produto) {
+            atualizar(id);
         } else {
-            this.salvar();
+            salvar();
         }
 
 
-        $scope.atualizar = function(id){
-            $scope.produtos = {};
-            $scope.edit = false;
-            alert ("Produto Atualizado com sucesso!");
-        }
+    $scope.atualizar = function(id){
+        $scope.produtos = {};
+        $scope.edit = false;
+        alert ("Produto Atualizado com sucesso!");
     }
+}*/
 
     $scope.salvar = function(){
         
@@ -52,16 +52,27 @@ function CadastroController($scope, toastr,$state){
                 'descricao': $scope.produto.descricao,
                 'imagem': $scope.produto.imagem
             });
-        //this.$scope.produto = new Produto();
         
-        alert("Item adicionado com sucesso.");
-        // toastr.success("Produto cadastrado com sucesso!");
+        //alert("Item adicionado com sucesso.");
+        //toastr.success("Produto cadastrado com sucesso!");
         console.log($scope.produtos[0]);
         //$state.transitionTo('consultar');
+
+        app.factory('notificationFactory', function(){
+            return{
+                sucess: function (text){
+                    toastr.success("Produto cadastrado com sucesso!");
+                },
+                error: function(text){
+                    toastr.error("Erro no cadastro do produto");
+                }
+            };
+
+        });
         };
     
-    $scope.cancelar = function(){
+    /*$scope.cancelar = function(){
         
-    }
+    }*/
     init();
 }

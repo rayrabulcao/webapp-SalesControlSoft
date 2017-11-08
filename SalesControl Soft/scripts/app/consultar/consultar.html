@@ -18,7 +18,7 @@
                 <div class="input-group h2">
                     <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit">
+                        <button class="btn btn-primary" type="submit" ng-submit="consultar()">
                             Pesquisar <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
@@ -43,7 +43,8 @@
                             <th>Código</th>
                             <th>Valor</th>
                             <th>Quantidade</th>
-                            <th>Cor/Tamanho</th>
+                            <th>Cor</th>
+                            <th>Tamanho</th>
                             <th>Descrição</th>
                             <th>Imagem</th>
                             <th class="actions">Ações</th>
@@ -51,22 +52,23 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Sapato 1</td>
-                            <td>Nike</td>
-                            <td>Diversos</td>
-                            <td>Outros</td>
-                            <td>123456789</td>
-                            <td>R$ 300,00</td>
-                            <td>50 unidades</td>
-                            <td>Preto/37</td>
-                            <th>hahahaha</th>
+                        <tr ng-repat="produto in produtos">
+                            <td>{{produto.nome}}</td>
+                            <td>{{produto.marca}}</td>
+                            <td>{{produto.colecao}}</td>
+                            <td>{{produto.modelo}}</td>
+                            <td>{{produto.codigo}}</td>
+                            <td>{{produto.valor}}</td>
+                            <td>{{produto.quantidade}}</td>
+                            <td>{{produto.cor}}</td>
+                            <th>{{produto.tamanho}}</th>
+                            <th>{{produto.descricao}}</th>
                             <td>
                                 <img src="" alt="">
                             </td>
                             <td class="actions">
-                                <a class="btn btn-success btn-xs" ui-sref="detalhar ">Visualizar</a>
-                                <a class="btn btn-warning btn-xs" ui-sref="alterar ">Editar</a>
+                                <a class="btn btn-success btn-xs" ui-sref="detalhar">Visualizar</a>
+                                <a class="btn btn-warning btn-xs" ui-sref="alterar">Editar</a>
                                 <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                             </td>
                         </tr>

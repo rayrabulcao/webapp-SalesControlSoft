@@ -29,9 +29,9 @@ var init = function () {
         });
     }
 
-    $scope.init(){
+    /*$scope.init(){
         $scope.id = $state.params.id;
         // Buscar o produto para edição
         buscarProduto($scope.id);
-    }
+    }*/
 }
