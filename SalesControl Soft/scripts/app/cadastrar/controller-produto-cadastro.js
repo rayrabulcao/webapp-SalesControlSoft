@@ -20,16 +20,22 @@ function CadastroController($scope, toastr,$state){
         imagem: ''        
     };
     }
-
     
 
-   /* vm.enviar = function() {
+    $scope.enviar = function() {
         if (this.$scope.produto) {
             this.atualizar();
         } else {
             this.salvar();
         }
-    }*/
+
+
+        $scope.atualizar = function(id){
+            $scope.produtos = {};
+            $scope.edit = false;
+            alert ("Produto Atualizado com sucesso!");
+        }
+    }
 
     $scope.salvar = function(){
         

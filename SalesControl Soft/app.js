@@ -33,5 +33,11 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "EditarController",
         controllerAs: "controller"
     });
+    $stateProvider.state("detalhar", {
+        url: "/detalhar",
+        templateUrl: "scripts/app/detalhar/detalhar.html",
+        controller: "DetalharController",
+        controllerAs: "controller"
+    });
     $urlRouterProvider.otherwise("/");
 }
