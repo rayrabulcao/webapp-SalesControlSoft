@@ -1,11 +1,13 @@
 angular.module('salescontrolapp')
     .controller("ConsultaController", ConsultaController)
 
-function ConsultaController($scope, toastr){
+function ConsultaController($scope, toastr, $state, $http){
 
     $scope.produto= {};
+    $scope.id = 0;
 
-var init = function () {
+
+/*var init = function () {
         $scope.produto = {
         nome: '',
         marca: '',
@@ -18,13 +20,17 @@ var init = function () {
         descricao: '',
         imagem: ''        
     };
+    }*/
+    $scope.init = function (){
+        $scope.id = $state.params.id;
+        $scope.consultar($scope.id);
     }
 
     $scope.consultar = function (id){
-        $http.get("http://localhost:8080/produto/" + id).then(function(retorno){
+        $http.get("http://127.0.0.1:8080/produto/" + id).then(function(retorno){
             $scope.produto = retorno.data[0];
         }).catch(function(erro){
-            alert.error("Erro! Tente novamente");
+            alert("Erro! Tente novamente");
             console.error(erro);
         });
     }
@@ -34,4 +40,5 @@ var init = function () {
         // Buscar o produto para edição
         buscarProduto($scope.id);
     }*/
+    $scope.init();
 }
