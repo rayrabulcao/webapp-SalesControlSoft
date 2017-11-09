@@ -15,6 +15,12 @@ function config(toastrConfig){
 angular.module("salescontrolapp").config(routerConfig);
 
 function routerConfig ($stateProvider, $urlRouterProvider){
+    $stateProvider.state("home", {
+        url: "/home",
+        templateUrl: "scripts/app/home/home.html",
+        controller: "HomeController",
+        controllerAs: "controller"
+    });
     $stateProvider.state("consultar", {
         url: "/consultar",
         templateUrl: "scripts/app/consultar/consultar.html",
@@ -39,5 +45,5 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "DetalharController",
         controllerAs: "controller"
     });
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
 }
