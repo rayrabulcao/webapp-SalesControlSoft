@@ -53,12 +53,12 @@ function CadastroController($scope, toastr,$state){
                 'imagem': $scope.produto.imagem
             });
         
-        //alert("Item adicionado com sucesso.");
+        alert("Item adicionado com sucesso.");
         //toastr.success("Produto cadastrado com sucesso!");
         console.log($scope.produtos[0]);
         //$state.transitionTo('consultar');
 
-        app.factory('notificationFactory', function(){
+        /*app.factory('notificationFactory', function(){
             return{
                 sucess: function (text){
                     toastr.success("Produto cadastrado com sucesso!");
@@ -68,11 +68,8 @@ function CadastroController($scope, toastr,$state){
                 }
             };
 
-        });
+        });*/
         };
     
-    /*$scope.cancelar = function(){
-        
-    }*/
     init();
 }
