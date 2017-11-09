@@ -1,23 +1,15 @@
 angular.module('salescontrolapp')
-    .controller("ConsultaController", ConsultaController)
+    .controller("DetalharController", DetalharController)
 
 
-    function DetalharController($state, $toastr, $scope){
+    function DetalharController($state, toastr, $scope){
 
-        $scope.produtos = [];
+        $scope.produtos = {};
+        $scope.id = 0;
 
-        var init = function () {
+        $scope.init = function () {
             $scope.produto = {
-            nome: '',
-            marca: '',
-            colecao: '',
-            modelo: '',
-            codigo: '',
-            valor: '',
-            quantidade: '',
-            tamanho: '',
-            descricao: '',
-            imagem: ''        
+                    
     };
     }
 
