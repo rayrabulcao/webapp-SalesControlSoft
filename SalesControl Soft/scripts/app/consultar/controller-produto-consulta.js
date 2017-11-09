@@ -12,7 +12,7 @@ function ConsultaController($scope, toastr, $state, $http){
     }
 
     $scope.consultar = function (id){
-        $http.get("http://127.0.0.1:8080/SalesControl%20Soft/#!/" + id).then(function(retorno){
+        $http.get("http://127.0.0.1:8080/#!/" + id).then(function(retorno){
             $scope.produto = retorno.data[0];
         }).catch(function(erro){
             alert("Erro! Tente novamente");

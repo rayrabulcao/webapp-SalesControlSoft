@@ -72,8 +72,9 @@
         <hr />
         <div class="row">
             <div class="form-group col-md-12">
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                <a ui-sref="index" class="btn btn-default">Cancelar</a>
+                <button type="submit" class="btn btn-primary" ng-if="!produto._id">Cadastrar</button>
+                <button type="submit" class="btn btn-primary" ng-if="produto._id">Atualizar</button>
+                <a ui-sref="home" class="btn btn-default">Cancelar</a>
             </div>
         </div>
     </form>

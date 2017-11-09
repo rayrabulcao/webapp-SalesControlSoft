@@ -21,21 +21,19 @@ function CadastroController($scope, toastr,$state){
     };
     }
     
-
-    /*$scope.enviar = function() {
+    $scope.enviar = function() {
         if ($scope.produto) {
             atualizar(id);
         } else {
             salvar();
         }
 
-
     $scope.atualizar = function(id){
         $scope.produtos = {};
         $scope.edit = false;
         alert ("Produto Atualizado com sucesso!");
     }
-}*/
+}
 
     $scope.salvar = function(){
         
@@ -56,7 +54,6 @@ function CadastroController($scope, toastr,$state){
         alert("Item adicionado com sucesso.");
         //toastr.success("Produto cadastrado com sucesso!");
         console.log($scope.produtos[0]);
-        //$state.transitionTo('consultar');
 
         /*app.factory('notificationFactory', function(){
             return{
