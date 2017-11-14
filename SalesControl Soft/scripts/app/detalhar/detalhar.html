@@ -25,58 +25,60 @@
         </div>
     </div>
 
-    <div id="main" class="container-fluid">
+    <div id="main" class="container-fluid"  ng-repeat="produto in produtos">
         <h3 class="page-header">Visualizar Produto</h3>
 
         <div class="row">
             <div class="col-md-4">
-                <p><strong>Nome do Produto</strong></p>
+                <p><strong>Nome do Produto:</strong></p>
                 <p>{{produto.nome}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Marca</strong></p>
+                <p><strong>Marca:</strong></p>
                 <p>{{produto.marca}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Coleção</strong></p>
+                <p><strong>Coleção:</strong></p>
                 <p>{{produto.colecao}}</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4">
-                <p><strong>Modelo</strong></p>
+                <p><strong>Modelo:</strong></p>
                 <p>{{produto.modelo}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Código do Produto</strong></p>
+                <p><strong>Código do Produto:</strong></p>
                 <p>{{produto.codigo}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Valor</strong></p>
-                <p>{{produto.valor}}</p>
+                <p><strong>Valor:</strong>
+                {{produto.valor}}</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4">
-                <p><strong>Quantidade</strong></p>
-                <p>{{produto.quantidade}}</p>
+                <!-- <p><strong>Quantidade</strong></p>
+                <p>{{produto.quantidade}}</p>-->
+                <p><strong>Quantidade:</strong> {{produto.quantidade}} 
+                <span ng-if="!produto.quantidade" class="text-danger">(Esgotado)</span></p>
             </div>
             <div class="col-md-4">
-                <p><strong>Cor</strong></p>
+                <p><strong>Cor:</strong></p>
                 <p>{{produto.cor}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Tamanho</strong></p>
+                <p><strong>Tamanho:</strong></p>
                 <p>{{produto.tamanho}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Imagem</strong></p>
+                <p><strong>Imagem:</strong></p>
                 <p>{{produto.imagem}}</p>
             </div>
             <div class="col-md-4">
-                <p><strong>Descrição</strong></p>
+                <p><strong>Descrição:</strong></p>
                 <p>{{produto.descricao}}</p>
             </div>
         </div>
