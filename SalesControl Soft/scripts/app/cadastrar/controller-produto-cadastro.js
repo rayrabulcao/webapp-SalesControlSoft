@@ -2,12 +2,9 @@ angular.module("salescontrolapp")
     .controller("CadastroController", CadastroController);
 
 function CadastroController($scope, toastr, $state){
-        
-
         $scope.produtos = [];
-
     var init = function () {
-        $scope.produto = {
+        $scope.produtos = {
         nome: '',
         marca: '',
         colecao: '',
@@ -20,23 +17,7 @@ function CadastroController($scope, toastr, $state){
         imagem: ''        
     };
     }
-    
-    $scope.enviar = function() {
-        if ($scope.produto) {
-            atualizar(id);
-        } else {
-            salvar();
-        }
-
-    $scope.atualizar = function(id){
-        $scope.produtos = {};
-        $scope.edit = false;
-        alert ("Produto Atualizado com sucesso!");
-    }
-}
-
     $scope.salvar = function(){
-        
         $scope.produtos.push(
             {
                 'nome': $scope.produto.nome,
@@ -50,11 +31,9 @@ function CadastroController($scope, toastr, $state){
                 'descricao': $scope.produto.descricao,
                 'imagem': $scope.produto.imagem
             });
-        
-        //alert("Item adicionado com sucesso.");
-        toastr.success("Produto cadastrado com sucesso!");
+        alert("Item adicionado com sucesso.");
+        //toastr.success("Produto cadastrado com sucesso!");
         console.log($scope.produtos[0]);
         };
-    
     init();
 }

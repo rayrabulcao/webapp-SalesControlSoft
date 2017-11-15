@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="salescontrolapp">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +7,10 @@
     <title>Produtos</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.js">
     <link rel="stylesheet" href="assets/css/index.scss">
-    <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
 </head>
-
 <body>
-    <!-- Menu -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -56,31 +53,12 @@
     <div class="container ">
         <div ui-view></div>        
     </div>
-
-    
     <!-- Footer da página -->
     <div class="container ">
     <footer class="footer ">
         <p>Copyright &copy; SalesControl Soft 2017</p>
     </footer>
 </div>
-    <!-- Firebase -->
-
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB-6tJVWTasM9Ea-owdv0kEiNbYKyq3HvI",
-    authDomain: "salescontrol-soft.firebaseapp.com",
-    databaseURL: "https://salescontrol-soft.firebaseio.com",
-    projectId: "salescontrol-soft",
-    storageBucket: "",
-    messagingSenderId: "838362152600"
-  };
-  firebase.initializeApp(config);
-</script>
-
-
     <!-- Vendor -->
     <script src="bower_components/jquery/dist/jquery.js "></script>
     <script src="bower_components/angular/angular.js "></script>
@@ -95,6 +73,6 @@
     <script src="scripts/app/detalhar/controller-produto-detalhar.js "></script>
     <script src="scripts/app/editar/controller-produto-editar.js "></script>
     <script src="scripts/app/home/controller-home.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script> 
 </body>
-
 </html>

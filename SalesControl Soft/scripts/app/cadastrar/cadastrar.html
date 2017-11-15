@@ -9,24 +9,20 @@
     </div>
     <!-- Inicio do formulario de cadastro do produto -->
     <form class="container" ng-submit="salvar()">
-
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="nome">Nome do produto:</label>
                 <input type="text" class="form-control" name="nome" placeholder="Digite o valor" required ng-model="produto.nome">
             </div>
-
             <div class="form-group col-md-4">
                 <label for="marca">Marca:</label>
                 <input type="text" class="form-control" name="marca" placeholder="Digite o valor" required ng-model="produto.marca">
             </div>
-
             <div class="form-group col-md-4">
                 <label for="colecao">Coleção:</label>
                 <input type="text" class="form-control" name="colecao" placeholder="Digite o valor" ng-model="produto.colecao">
             </div>
         </div>
-
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="modelo">Modelo:</label>
@@ -45,7 +41,6 @@
                 <input type="text" class="form-control" name="quantidade" placeholder="Digite o valor" required ng-model="produto.quantidade">
             </div>
         </div>
-
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="cor">Cor:</label>
@@ -61,14 +56,12 @@
                 <!-- <button type="submit" class="btn btn primary">Anexar</button>-->
             </div>
         </div>
-
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="descricao">Descrição:</label>
                 <textarea name="descricao" cols="15" rows="5" class="form-control" ng-model="produto.descricao"></textarea>
             </div>
         </div>
-
         <hr />
         <div class="row">
             <div class="form-group col-md-12">
@@ -78,8 +71,6 @@
             </div>
         </div>
     </form>
-    
 </div>
 </body>
-
 </html>

@@ -2,7 +2,6 @@ angular.module('salescontrolapp')
 .controller("EditarController", EditarController)
 
 function EditarController($scope, toastr, $state, $http){
-
     $scope.produto = {};
     $scope.id = 0;
 
@@ -14,14 +13,10 @@ function EditarController($scope, toastr, $state, $http){
             console.error(erro);
         });
     }
-
-    $scope.init = function(){
-        // Pegar o ID da URL
+    var init = function(){
         $scope.id = $state.params.id;
-        // Buscar o produto para edição
         $scope.buscarProduto($scope.id);
     }
-
     $scope.salvar = function(id, produto){
         $http.get("http:127.0.0.1:8080//#!/" + id, produto).then(function(retorno){
             toastr.success("Produto atualizado com sucesso!");
@@ -30,6 +25,5 @@ function EditarController($scope, toastr, $state, $http){
             console.error(erro);
         });
     }
-
     init();
 }

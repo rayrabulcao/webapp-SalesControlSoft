@@ -6,14 +6,11 @@
             <hr>
         </div>
     </div>
-
-
     <div id="main" class="container-fluid">
         <div class="row">
             <div class="col-md-3">
                 <h2>Itens</h2>
             </div>
-
             <div class="col-md-6" ng-controller="ConsultaController">
                 <div class="input-group h2">
                     <input name="data[search]" class="form-control" type="search" ng-model="search" placeholder="Pesquisar Itens">
@@ -24,12 +21,10 @@
                     </span>
                 </div>
             </div>
-
             <div class="col-md-3">
                 <a ui-sref="cadastrar" class="btn btn-primary pull-right h2">Adicionar produto</a>
             </div>
         </div>
-
         <hr />
         <div id="list" class="row" ng-controller="ConsultaController"
             <div class="table-responsive col-md-12">
@@ -50,7 +45,6 @@
                             <th class="actions">Ações</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr ng-repat="produto in produtos">
                             <td>{{produto.nome}}</td>
@@ -72,14 +66,10 @@
                                 <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
-
             </div>
         </div>
-        <!-- /#list -->
-
         <div id="bottom" class="row">
             <div class="col-md-12">
 
@@ -100,9 +90,6 @@
                         <a href="#" rel="next">Próximo &gt;</a>
                     </li>
                 </ul>
-                <!-- /.pagination -->
-
             </div>
         </div>
-        <!-- /#bottom -->
-    </div>
+</div>
