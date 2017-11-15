@@ -1,7 +1,7 @@
 angular.module("salescontrolapp")
     .controller("CadastroController", CadastroController);
 
-function CadastroController($scope, toastr,$state){
+function CadastroController($scope, toastr, $state){
         
 
         $scope.produtos = [];
@@ -51,21 +51,9 @@ function CadastroController($scope, toastr,$state){
                 'imagem': $scope.produto.imagem
             });
         
-        alert("Item adicionado com sucesso.");
-        //toastr.success("Produto cadastrado com sucesso!");
+        //alert("Item adicionado com sucesso.");
+        toastr.success("Produto cadastrado com sucesso!");
         console.log($scope.produtos[0]);
-
-        /*app.factory('notificationFactory', function(){
-            return{
-                sucess: function (text){
-                    toastr.success("Produto cadastrado com sucesso!");
-                },
-                error: function(text){
-                    toastr.error("Erro no cadastro do produto");
-                }
-            };
-
-        });*/
         };
     
     init();

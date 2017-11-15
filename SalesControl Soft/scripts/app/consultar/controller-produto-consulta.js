@@ -11,19 +11,34 @@ function ConsultaController($scope, toastr, $state, $http){
         $scope.consultar($scope.id);
     }
 
+     function init(){
+        $scope.produto = [];
+        $scope.consultar();
+    }
+
+    $scope.editar = function (id){
+        $state.go("produtoEditar", {id: id});
+    }
+
+    $scope.excluir = function (id){
+        $http.delete("http://127.0.0.1:8080/#!/" + id).then(function (retorno){
+            toastr.success("Produto excluído com sucesso");
+            consultar();
+        }).catch(function(erro){
+            toastr.error("Ocorreu um erro. Tente novamente");
+            console.error(erro);
+        });
+    }
+
     $scope.consultar = function (id){
-        $http.get("http://127.0.0.1:8080/#!/" + id).then(function(retorno){
-            $scope.produto = retorno.data[0];
+        $http.get("http://127.0.0.1:8080/#!/").then(function(retorno){
+            $scope.produto = retorno.data;
         }).catch(function(erro){
             alert("Erro! Tente novamente");
             console.error(erro);
         });
     }
 
-    /*$scope.init(){
-        $scope.id = $state.params.id;
-        // Buscar o produto para edição
-        buscarProduto($scope.id);
-    }*/
-    $scope.init();
+
+    init();
 }
