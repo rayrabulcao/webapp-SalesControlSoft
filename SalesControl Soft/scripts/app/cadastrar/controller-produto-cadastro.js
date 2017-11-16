@@ -1,24 +1,14 @@
 angular.module("salescontrolapp")
     .controller("CadastroController", CadastroController);
 
-function CadastroController($scope, toastr, $state){
-        $scope.produtos = [];
+function CadastroController($scope, toastr, $state, $http) {
+    $scope.produtos = [];
     var init = function () {
         $scope.produtos = {
-        nome: '',
-        marca: '',
-        colecao: '',
-        modelo: '',
-        codigo: '',
-        valor: '',
-        quantidade: '',
-        tamanho: '',
-        descricao: '',
-        imagem: ''        
-    };
+            nome: '',            marca: '',            colecao: '',            modelo: '',            codigo: '',            valor: '',            quantidade: '',            tamanho: '',            descricao: '',            imagem: ''        };
     }
-    $scope.salvar = function(){
-        $scope.produtos.push(
+    $scope.salvar = function () {
+        $http.post('http://localhost:8080/produto', (
             {
                 'nome': $scope.produto.nome,
                 'marca': $scope.produto.marca,
@@ -30,10 +20,8 @@ function CadastroController($scope, toastr, $state){
                 'tamanho': $scope.produto.tamanho,
                 'descricao': $scope.produto.descricao,
                 'imagem': $scope.produto.imagem
-            });
-        alert("Item adicionado com sucesso.");
-        //toastr.success("Produto cadastrado com sucesso!");
-        console.log($scope.produtos[0]);
-        };
-    init();
-}
+            }));
+        }
+    
+init();
+};

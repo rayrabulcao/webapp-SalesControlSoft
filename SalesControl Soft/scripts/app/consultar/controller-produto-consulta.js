@@ -5,14 +5,10 @@ function ConsultaController($scope, toastr, $state, $http){
     $scope.produto= {};
     $scope.id = 0;
     
-    $scope.init = function (){
-        $scope.id = $state.params.id;
-        $scope.consultar($scope.id);
-    }
-    function init(){
-        $scope.produto = [];
+    var init = function(){
         $scope.consultar();
     }
+
     $scope.editar = function (id){
         $state.go("produtoEditar", {id: id});
     }
@@ -25,9 +21,9 @@ function ConsultaController($scope, toastr, $state, $http){
             console.error(erro);
         });
     }
-    $scope.consultar = function (id){
-        $http.get("http://127.0.0.1:8080/#!/").then(function(retorno){
-            $scope.produto = retorno.data;
+    $scope.consultar = function (){
+        $http.get("http://127.0.0.1:8080/produto").then(function(retorno){
+            $scope.produtos = retorno.data;
         }).catch(function(erro){
             alert("Erro! Tente novamente");
             console.error(erro);
