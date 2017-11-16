@@ -26,7 +26,8 @@ function CadastroController($scope, toastr, $state, $http) {
                 'imagem': $scope.produto.imagem
             }));
             limparForm();
-            alert("Produto Cadastrado com sucesso!");
+            toastr.success("Produto Cadastrado com sucesso!");
+            //alert("Produto Cadastrado com sucesso!");
         }
 init();
 };

@@ -19,6 +19,3 @@ angular.module('salescontrolapp')
     }
     init();
 }
-
-
-    
