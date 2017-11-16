@@ -7,6 +7,10 @@ function CadastroController($scope, toastr, $state, $http) {
         $scope.produtos = {
             nome: '',            marca: '',            colecao: '',            modelo: '',            codigo: '',            valor: '',            quantidade: '',            tamanho: '',            descricao: '',            imagem: ''        };
     }
+    function limparForm (){
+        $scope.produto   = {
+        nome: '',            marca: '',            colecao: '',            modelo: '',            codigo: '',            valor: '',            quantidade: '',            tamanho: '',            descricao: '',            imagem: ''        };
+    }
     $scope.salvar = function () {
         $http.post('http://localhost:8080/produto', (
             {
@@ -21,7 +25,8 @@ function CadastroController($scope, toastr, $state, $http) {
                 'descricao': $scope.produto.descricao,
                 'imagem': $scope.produto.imagem
             }));
+            limparForm();
+            alert("Produto Cadastrado com sucesso!");
         }
-    
 init();
 };
