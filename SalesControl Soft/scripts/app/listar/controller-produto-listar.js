@@ -19,7 +19,7 @@ function ListarController($scope, toastr, $state, $http){
     $scope.excluir = function (id){
         $http.delete("http://127.0.0.1:8080/produto/" + id).then(function (retorno){
             toastr.success("Produto excluído com sucesso");
-            consultar();
+            $scope.consultar();
         }).catch(function(erro){
             toastr.error("Ocorreu um erro. Tente novamente");
             console.error(erro);
