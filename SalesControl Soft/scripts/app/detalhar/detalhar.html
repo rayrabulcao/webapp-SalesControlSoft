@@ -49,7 +49,6 @@
             <div class="col-md-4">
                 <p><strong>Tamanho:</strong></p>
                 <p>{{produto.tamanho}}</p>
-                
             </div>
             <div class="col-md-4">
                 <p><strong>Imagem:</strong></p>
@@ -64,6 +63,7 @@
         <div id="actions" class="row">
             <div class="col-md-12">
                 <a ui-sref="editar" class="btn btn-primary" ng-click="editar(produto._id)">Editar</a>
+                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(produto._id)">Excluir</a>
                 <a ui-sref="index" class="btn btn-default">Fechar</a>
             </div>
         </div>
