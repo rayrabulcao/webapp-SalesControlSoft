@@ -45,5 +45,11 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "DetalharController",
         controllerAs: "controller"
     });
-    $urlRouterProvider.otherwise("/home");
+    $stateProvider.state("login", {
+        url: "/login",
+        templateUrl: "scripts/app/login/login.html",
+        controller: "LoginController",
+        controllerAs: "controller"
+    });
+    $urlRouterProvider.otherwise("/login");
 }
