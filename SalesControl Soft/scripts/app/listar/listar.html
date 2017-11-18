@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="text-primary">Consultar Produtos</h3>
+            <h3 class="text-primary">Listar Produtos</h3>
             <hr>
         </div>
     </div>
@@ -11,7 +11,7 @@
             <div class="col-md-3">
                 <h2>Itens</h2>
             </div>
-            <div class="col-md-6" ng-controller="ConsultaController">
+            <div class="col-md-6" ng-controller="ListarController">
                 <div class="input-group h2">
                     <input name="data[search]" class="form-control" type="search" ng-model="search" placeholder="Pesquisar Itens">
                     <span class="input-group-btn">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <hr />
-        <div id="list" class="row" ng-controller="ConsultaController"></div>
+        <div id="list" class="row" ng-controller="ListarController"></div>
             <div class="table-responsive col-md-12">
                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                     <thead>
@@ -50,7 +50,7 @@
                             <td>{{produto.nome}}</td>
                             <td>#########</td>
                             <td>#########</td>
-                            <td>{{produto.imagem}}</td>
+                            <td>########</td>
                             <td>{{produto.codigo}}</td>
                             <td>{{produto.valor}}</td>
                             <td>{{produto.quantidade}}</td>
@@ -61,9 +61,9 @@
                                 <img src="" alt="">
                             </td>
                             <td class="actions">
-                                <a class="btn btn-success btn-xs" ui-sref="detalhar">Visualizar</a>
-                                <a class="btn btn-warning btn-xs" ui-sref="alterar">Editar</a>
-                                <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                <a class="btn btn-success btn-xs" ui-sref="detalhar" ng-click="visualizar(produto._id)">Visualizar</a>
+                                <a class="btn btn-warning btn-xs" ui-sref="editar" ng-click="editar(produto._id)">Editar</a>
+                                <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(produto._id)">Excluir</a>
                             </td>
                         </tr>
                     </tbody>

@@ -2,8 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 ng-if="!produto._id" class="text-primary">Cadastro de Produtos</h3>
-            <h2 ng-if="produto._id">Atualização de Produtos</h2>
+            <h3 class="text-primary">Cadastro de Produtos</h3>
             <hr>
         </div>
     </div>
@@ -65,8 +64,7 @@
         <hr />
         <div class="row">
             <div class="form-group col-md-12">
-                <button type="submit" class="btn btn-primary" ng-if="!produto._id">Cadastrar</button>
-                <button type="submit" class="btn btn-primary" ng-if="produto._id">Atualizar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
                 <a ui-sref="home" class="btn btn-default">Cancelar</a>
             </div>
         </div>

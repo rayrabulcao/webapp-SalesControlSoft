@@ -21,10 +21,10 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "HomeController",
         controllerAs: "controller"
     });
-    $stateProvider.state("consultar", {
-        url: "/consultar",
-        templateUrl: "scripts/app/consultar/consultar.html",
-        controller: "ConsultaController",
+    $stateProvider.state("listar", {
+        url: "/listar",
+        templateUrl: "scripts/app/listar/listar.html",
+        controller: "ListarController",
         controllerAs: "controller"
     });
     $stateProvider.state("cadastrar", {
@@ -34,13 +34,13 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controllerAs: "controller"
     });
     $stateProvider.state("editar", {
-        url: "/editar",
+        url: "/editar/:id",
         templateUrl: "scripts/app/editar/editar.html",
         controller: "EditarController",
         controllerAs: "controller"
     });
     $stateProvider.state("detalhar", {
-        url: "/detalhar",
+        url: "/detalhar/:id",
         templateUrl: "scripts/app/detalhar/detalhar.html",
         controller: "DetalharController",
         controllerAs: "controller"
