@@ -1,9 +1,9 @@
-$scope.taLogado = false;
+// $scope.taLogado = false;
 
-function logar (){
-    $scope.taLogado = true;
-}
+// function logar (){
+//     $scope.taLogado = true;
+// }
 
-function logOut(){
-    $scope.taLogado = false;
-}
+// function logOut(){
+//     $scope.taLogado = false;
+// }
