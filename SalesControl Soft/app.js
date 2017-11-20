@@ -51,5 +51,11 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controller: "LoginController",
         controllerAs: "controller"
     });
+    $stateProvider.state("cadastroUsuario", {
+        url: "/cadastroUsuario",
+        templateUrl: "scripts/app/cadastro-usuario/cadastrar-usuario.html",
+        controller: "CadastroUsuarioController",
+        controllerAs: "controller"
+    });
     $urlRouterProvider.otherwise("/login");
 }
