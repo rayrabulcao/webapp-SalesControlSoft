@@ -18,7 +18,7 @@ function EditarController($scope, toastr, $state, $http){
     }
 
     $scope.atualizar = function(produto){
-        $http.post("http:127.0.0.1:8080/produto", produto).then(function(retorno){
+        $http.put("http:127.0.0.1:8080/produto", produto).then(function(retorno){
             toastr.success("Produto atualizado com sucesso!");
         }).catch(function(erro){
             toastr.error("Ocorreu um erro! Tente novamente.");
