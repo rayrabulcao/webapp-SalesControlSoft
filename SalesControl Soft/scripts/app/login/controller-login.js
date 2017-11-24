@@ -14,7 +14,7 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
             senha: user.password
         })
 
-        $http.post('http://127.0.0.1:8080/produto/', valor).then(function (response) {
+        $http.post('http://127.0.0.1:8080/login/', valor).then(function (response) {
             $scope.acesso = response.data;
 
             if ($scope.acesso == '') {
@@ -28,7 +28,7 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
                     $state.go('home');
                 }
                 else {
-                    $state.go('home');
+                    $state.go('login');
                 }
             }
 
