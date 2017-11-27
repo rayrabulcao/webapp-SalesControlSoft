@@ -27,6 +27,8 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
 	});
     };
 
+
+$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
     //$scope.taLogado = false;
 
 //function logar (){
