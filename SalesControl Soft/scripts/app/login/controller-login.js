@@ -8,42 +8,34 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
     };
 
     $scope.loginUser = function (user) {
-        var valor = [];
-        valor.push({
-            login: user.username,
-            senha: user.password
-        })
-
-        $http.post('http://127.0.0.1:8080/login/', valor).then(function (response) {
-            $scope.acesso = response.data;
-
-            if ($scope.acesso == '') {
-                $scope.message = 'Usuário ou Senha inválidos!';
-            }
-            else {
-                window.sessionStorage.setItem('usuario', $scope.acesso[0].nome);
-                window.sessionStorage.setItem('admin', $scope.acesso[0].admin);
-                $rootScope.isAdmin =  window.sessionStorage.getItem('admin')
-                if($rootScope.isAdmin === 'true'){
-                    $state.go('home');
-                }
-                else {
-                    $state.go('login');
-                }
-            }
-
-        });
+        var usuarios = [
+		{
+			username:'admin', password:'12345', admin:true
+		},
+          	{
+			username:'cliente', password:'cliente123', admin:false
+		},
+          ]
+	      angular.forEach(usuarios, function(value, index){
+        	if(value.username == user.username && value.password == user.password){
+	              delete value.password;
+        	      $rootScope.currentUser = value;
+        	      $state.go('home');
+			} else if (value.username != user.username && value.password != user.password){
+				toastr.error('Usuário e senha Inválidos!'); 
+          	}
+	});
     };
 
-    init();
-}
+    //$scope.taLogado = false;
 
-// $scope.taLogado = false;
-
-// function logar (){
+//function logar (){
 //     $scope.taLogado = true;
 // }
 
-// function logOut(){
-//     $scope.taLogado = false;
-// }
+ //function logOut(){
+   //  $scope.taLogado = false;
+ //}
+
+    init();
+}

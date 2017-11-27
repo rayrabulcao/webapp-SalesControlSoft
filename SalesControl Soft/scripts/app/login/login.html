@@ -4,7 +4,7 @@
       <img src="assets/img/logo2.jpg" class="logo-container">
       
       <div class="col-sm-12 col-md-10 col-md-offset-1">
-        <form id="loginForm" ng-submit="loginUser(user)">
+        <form id="loginForm">
           <div class="form-group input-group">
             <span class="input-group-addon">
               <i class="glyphicon glyphicon-user"></i>
@@ -23,7 +23,7 @@
             </label>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-def btn-block">Entrar</button>
+            <button type="submit" class="btn btn-def btn-block" ng-click="loginUser(user)">Entrar</button>
           </div>
         </form>
       </div>
