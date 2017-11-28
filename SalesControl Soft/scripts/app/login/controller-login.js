@@ -21,14 +21,15 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
 	              delete value.password;
         	      $rootScope.currentUser = value;
         	      $state.go('home');
-			} else if (value.username != user.username && value.password != user.password){
+			}
+			if (value.username != user.username && value.password != user.password){
 				toastr.error('Usuário e senha Inválidos!'); 
           	}
 	});
     };
 
 
-$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
+//$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
     //$scope.taLogado = false;
 
 //function logar (){
