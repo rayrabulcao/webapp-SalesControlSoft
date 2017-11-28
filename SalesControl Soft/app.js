@@ -19,42 +19,44 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         url: "/home",
         templateUrl: "scripts/app/home/home.html",
         controller: "HomeController",
-        controllerAs: "controller",
-        data : { requireLogin: true }
+        controllerAs: "controller"
+        //data : { requireLogin: true }
     });
     $stateProvider.state("listar", {
         url: "/listar",
         templateUrl: "scripts/app/listar/listar.html",
         controller: "ListarController",
-        controllerAs: "controller",
-        resolve: { isAdmin: isAdmin }
+        controllerAs: "controller"
+        //resolve: { isAdmin: isAdmin }
     });
     $stateProvider.state("cadastrar", {
         url: "/cadastrar",
         templateUrl: "scripts/app/cadastrar/cadastrar.html",
         controller: "CadastroController",
-        controllerAs: "controller",
-        resolve: { isAdmin: isAdmin }
+        controllerAs: "controller"
+        //resolve: { isAdmin: isAdmin }
     });
     $stateProvider.state("editar", {
         url: "/editar/:id",
         templateUrl: "scripts/app/editar/editar.html",
         controller: "EditarController",
-        controllerAs: "controller",
-        resolve: { isAdmin: isAdmin }
+        controllerAs: "controller"
+        //resolve: { isAdmin: isAdmin }
     });
     $stateProvider.state("detalhar", {
         url: "/detalhar/:id",
         templateUrl: "scripts/app/detalhar/detalhar.html",
         controller: "DetalharController",
-        controllerAs: "controller",
-        resolve: { isAdmin: isAdmin }
+        controllerAs: "controller"
+        //resolve: { isAdmin: isAdmin }
     });
     $stateProvider.state("login", {
         url: "/login",
         templateUrl: "scripts/app/login/login.html",
         controller: "LoginController",
-        controllerAs: "controller"
+        controllerAs: "controller",
+        data : { requireLogin: false }
+        //resolve: { isAdmin: isAdmin }
     });
     $stateProvider.state("cadastroUsuario", {
         url: "/cadastroUsuario",
