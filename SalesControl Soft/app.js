@@ -58,11 +58,5 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         data : { requireLogin: false }
         //resolve: { isAdmin: isAdmin }
     });
-    $stateProvider.state("cadastroUsuario", {
-        url: "/cadastroUsuario",
-        templateUrl: "scripts/app/cadastro-usuario/cadastrar-usuario.html",
-        controller: "CadastroUsuarioController",
-        controllerAs: "controller"
-    });
     $urlRouterProvider.otherwise("/login");
 }
