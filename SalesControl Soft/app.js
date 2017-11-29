@@ -22,7 +22,7 @@ function routerConfig ($stateProvider, $urlRouterProvider){
         controllerAs: "controller"
         //data : { requireLogin: true }
     });
-    $stateProvider.state("listar", {
+    $stateProvider.state("home.listar", {
         url: "/listar",
         templateUrl: "scripts/app/listar/listar.html",
         controller: "ListarController",

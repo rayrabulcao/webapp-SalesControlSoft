@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="salescontrolapp">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +11,26 @@
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.js">
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" ng-show="logado">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" ui-sref="index">SalesControl Soft</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right ">
-                    <li>
-                        <a ui-sref="home ">Home</a>
-                    </li>
-                    <li>
-                        <a ui-sref="cadastrar ">Cadastro de Produtos</a>
-                    </li>
-                    <li>
-                        <a ui-sref="listar ">Listagem de Produtos</a>
-                    </li>
-                    <li class="dropdown ">
-                        <a href="# " class="dropdown-toggle " data-toggle="dropdown " role="button " aria-haspopup="true
-                " aria-expanded="false ">Sair
-                            <span class="caret "></span>
-                        </a>
-                    </li>
-            </div>
-        </div>
-    </nav>
+
     <!-- Conteúdo -->
     <div class="container ">
-        <div ui-view></div>        
+        <div ui-view></div>
+        <!-- Footer da página -->
+        <footer class="footer ">
+            <p>Copyright &copy; SalesControl Soft 2017</p>
+        </footer>
     </div>
-    <!-- Footer da página -->
-    <div class="container ">
-    <footer class="footer ">
-        <p>Copyright &copy; SalesControl Soft 2017</p>
-    </footer>
-</div>
+
+
     <!-- Vendor -->
     <script src="bower_components/jquery/dist/jquery.js "></script>
     <script src="bower_components/angular/angular.js "></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js "></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.js "></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js "></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
     <!-- App -->
     <script src="app.js "></script>
@@ -69,6 +41,8 @@
     <script src="scripts/app/home/controller-home.js"></script>
     <script src="scripts/app/login/controller-login.js"></script>
     <script src="scripts/app/cadastro-usuario/controller-cadastro-usuario.js"></script>
-    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script> 
+    <script src="scripts/app/diretivas/navbarDirective.js"></script>
+
 </body>
+
 </html>

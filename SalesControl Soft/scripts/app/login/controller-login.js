@@ -20,8 +20,11 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
         	if(value.username == user.username && value.password == user.password){
 	              delete value.password;
         	      $rootScope.currentUser = value;
+				  sessionStorage.setItem('chave', 'true');
         	      $state.go('home');
 				  $scope.logado = true;
+				  var data = sessionStorage.getItem('chave');
+				  console.log (data);
 			}
 			if (value.username != user.username && value.password != user.password){
 				toastr.error('Usuário e senha Inválidos!');
