@@ -32,21 +32,7 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
 	});
     };
 
-	$scope.taLogado = function user(){
-
-	}
-
-
-//$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
-    //$scope.taLogado = false;
-
-//function logar (){
-//     $scope.taLogado = true;
-// }
-
- //function logOut(){
-   //  $scope.taLogado = false;
- //}
-
+	//$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
+    
     init();
 }
