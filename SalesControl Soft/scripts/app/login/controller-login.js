@@ -5,7 +5,7 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
 
     var init = function () {
 		$scope.acesso = '';
-		$scope.message = 'Usuário ou Senha inválidos!';
+		//$scope.message = 'Usuário ou Senha inválidos!';
     };
 
     $scope.loginUser = function (user) {
@@ -27,9 +27,7 @@ function LoginController ($scope, toastr, $state, $http, $rootScope, $window, $d
 				toastr.error('Usuário e senha Inválidos!');
           	}
 	});
-    };
-
-	//$rootScope.isAdmin = window.sessionStorage.getItem('admin') if($rootScope.isAdmin === 'true'){ $state.go('home'); } else { $state.go('Só o que o vendedor pode ver'); } }
+	};
     
     init();
 }
